@@ -7,23 +7,15 @@ const jwt = require('jsonwebtoken');
 
 var authConfig = require('../config/auth');
 
-//Cadastro de Usuário - João
+
 router.post('/signup', async function(req, res, next){
     
     userReturn = req.body;
 
      var user = new User({
-        imagemUrl: userReturn.imagemUrl,
-        firstName: userReturn.firstName,
-        lastName: userReturn.lastName,
+        name: userReturn.name,
         password: userReturn.password,
         email: userReturn.email,
-        cpf: userReturn.cpf,
-        bairro: userReturn.bairro,
-        estado: userReturn.estado,
-        cidade: userReturn.cidade,
-        quilometragemRodada: userReturn.quilometragemRodada
-    
     });
         
     user.save(function(err, result){
@@ -44,8 +36,6 @@ router.post('/signup', async function(req, res, next){
 
 
 
-
-//Login - Mateus
 router.post('/login', async function(req, res, next){
     
     userReturn = req.body;
@@ -71,9 +61,6 @@ router.post('/login', async function(req, res, next){
 
     res.status(200).json({myMsgSucess: 'Logado com sucesso!', user: user, token});
 })
-
-
-
 
 
 
