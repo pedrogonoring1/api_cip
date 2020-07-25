@@ -23,10 +23,7 @@ router.post('/newproblema', async function(req, res, next){
             });
         }
 
-        res.status(200).json({
-            msgSucesso: 'Problema Salvo com sucesso!',
-            objSalvo: result
-        });
+        res.status(200).json(result);
     });
 });
 
@@ -41,10 +38,7 @@ router.get('/', function(req, res,next){
             });
         };
 
-        return res.status(200).json({
-            msgSucesso: 'Sucesso ao buscar todas os problemas.',
-            objReturn: result
-        });
+        return res.status(200).json(result);
     });
 });
 
