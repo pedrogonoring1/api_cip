@@ -38,10 +38,7 @@ router.get('/', function(req, res,next){
             });
         };
 
-        return res.status(200).json({
-            msgSucesso: 'Sucesso ao buscar todas ideas.',
-            objReturn: result
-        });
+        res.status(200).json(result);
     });
 });
 
