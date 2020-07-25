@@ -23,10 +23,7 @@ router.post('/newideia', async function(req, res, next){
             });
         }
 
-        res.status(200).json({
-            msgSucesso: 'Ideia Salva com sucesso!',
-            objSalvo: result
-        });
+        res.status(200).json(result);
     });
 });
 
